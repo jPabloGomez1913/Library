@@ -21,7 +21,7 @@ namespace LibraryProyect.DAL.Entities
         public string Genero { get; set; }
 
 
-        public List<Loan> Loans { get; set; }
+        public List<Loan>? Loans { get; set; }
         
     }
 }
