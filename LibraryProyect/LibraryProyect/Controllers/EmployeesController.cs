@@ -18,7 +18,7 @@ namespace LibraryProyect.Controllers
         }
         [HttpGet, ActionName("Get")]
         [Route("Get")]
-        public async Task<ActionResult<IEnumerable<Employee>>> GetStudents()
+        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
             var employees = await _context.Employees.ToListAsync();
 
