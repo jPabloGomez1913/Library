@@ -18,6 +18,10 @@ namespace LibraryProyect.DAL.Entities
         [Display(Name = "Genero del libro:")]
         [MaxLength(30, ErrorMessage = "El campo {0} debe tener maximo {1} caracteres")]
         [Required(ErrorMessage = "El campo {0} es obligatorio")]
-        public string Genero { get; set; } 
+        public string Genero { get; set; }
+
+
+        public List<Loan> Loans { get; set; }
+        
     }
 }
