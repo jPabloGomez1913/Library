@@ -3,59 +3,60 @@ using LibraryProyect.DAL.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Net.Sockets;
 
 namespace LibraryProyect.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StudentsController : ControllerBase
+    public class EmployeesController : ControllerBase
     {
-        
         private readonly DataBaseContext _context;
-        public StudentsController(DataBaseContext context)
+
+        public EmployeesController(DataBaseContext context)
         {
             _context = context;
         }
         [HttpGet, ActionName("Get")]
         [Route("Get")]
-        public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
+        public async Task<ActionResult<IEnumerable<Employee>>> GetStudents()
         {
-            var students = await _context.Students.ToListAsync();
+            var employees = await _context.Employees.ToListAsync();
 
-            if (students == null)
+            if (employees == null)
             {
                 return NotFound();
             }
 
 
-            return Ok(students);
+            return Ok(employees);
         }
         [HttpGet, ActionName("Get")]
         [Route("Get/{id}")]
-        public async Task<ActionResult<Book>> GetSudentById(Guid? id)
+        public async Task<ActionResult<Book>> GetEmployeeById(Guid? id)
         {
-            var students = await _context.Students.FirstOrDefaultAsync(c => c.id == id); //Select * From Countries Where Id = "..."
+            var employess = await _context.Employees.FirstOrDefaultAsync(c => c.id == id); //Select * From Countries Where Id = "..."
 
-            if (students == null)
+            if (employess == null)
             {
                 return NotFound();
             }
 
 
-            return Ok(students);
+            return Ok(employess);
         }
+
+
         [HttpPost, ActionName("Create")]
         [Route("Create")]
-        public async Task<ActionResult> CreateBook(Student student)
+        public async Task<ActionResult> CreateEmployee(Employee employee)
         {
-          
+
             try
             {
-                student.id = Guid.NewGuid();
-                
+                employee.id = Guid.NewGuid();
+
                 //ticket.CreatedDate = DateTime.Now;
-                _context.Students.Add(student);
+                _context.Employees.Add(employee);
                 await _context.SaveChangesAsync(); // Aquí es donde se hace el Insert Into...
             }
             catch (DbUpdateException dbUpdateException)
@@ -68,49 +69,52 @@ namespace LibraryProyect.Controllers
                 return Conflict(ex.Message);
             }
 
-            return Ok(student);
+            return Ok(employee);
         }
+
 
         [HttpPut, ActionName("Edit")]
         [Route("Edit/{id}")]
-        public async Task<ActionResult> EditStudent(Guid? id, Student student)
+        public async Task<ActionResult> EditEmployee(Guid? id, Employee employee)
         {
             try
             {
-                if (id != student.id) return NotFound("Stuent not found");
+                if (id != employee.id) return NotFound("employee not found");
 
-              
 
-                _context.Students.Update(student);
+
+                _context.Employees.Update(employee);
                 await _context.SaveChangesAsync(); // Aquí es donde se hace el Update...
             }
             catch (DbUpdateException dbUpdateException)
             {
                 if (dbUpdateException.InnerException.Message.Contains("duplicate"))
-                    return Conflict(String.Format("{0} ya existe", student.StudentCode));
+                    return Conflict(String.Format("{0} ya existe", employee.EmployeeCode));
             }
             catch (Exception ex)
             {
                 return Conflict(ex.Message);
             }
 
-            return Ok(student);
+            return Ok(employee);
         }
+
+
 
 
         [HttpDelete, ActionName("Delete")]
         [Route("Delete/{id}")]
-        public async Task<ActionResult> DeleteStudent(Guid? id)
+        public async Task<ActionResult> DeleteEmployee(Guid? id)
         {
-            if (_context.Students == null) return Problem("Entity set 'DataBaseContext.Students' is null.");
-            var student = await _context.Students.FirstOrDefaultAsync(c => c.id == id);
+            if (_context.Employees == null) return Problem("Entity set 'DataBaseContext.Employees' is null.");
+            var employee = await _context.Employees.FirstOrDefaultAsync(c => c.id == id);
 
-            if (student == null) return NotFound("student not found");
+            if (employee == null) return NotFound("employee not found");
 
-            _context.Students.Remove(student);
+            _context.Employees.Remove(employee);
             await _context.SaveChangesAsync(); //Hace las veces del Delete en SQL
 
-            return Ok(String.Format("El estudiante fue eliminado!"));
+            return Ok(String.Format("El empleado fue eliminado!"));
         }
     }
 }
