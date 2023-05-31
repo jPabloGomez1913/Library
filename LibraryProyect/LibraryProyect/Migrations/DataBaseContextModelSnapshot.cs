@@ -130,7 +130,7 @@ namespace LibraryProyect.Migrations
                     b.Property<string>("StudentCode")
                         .IsRequired()
                         .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasColumnType("nvarchar(10)"); // AQUII
 
                     b.HasIndex("StudentCode")
                         .IsUnique()
