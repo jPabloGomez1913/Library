@@ -1,5 +1,6 @@
 using LibraryProyect.DAL;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,9 @@ builder.Services.AddDbContext<DataBaseContext>(o =>
 });
 
 
-
+builder.Services.AddTransient<SeederDb>();
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 var app = builder.Build();
 
