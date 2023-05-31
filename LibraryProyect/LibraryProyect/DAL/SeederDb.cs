@@ -19,6 +19,69 @@ namespace LibraryProyect.DAL
             await _context.SaveChangesAsync();
         }
 
+
+    //    b.Property<string>("StudentCode")
+    //    b.HasIndex("StudentCode")
+
+
+        private async Task PopulateStudentsAsyn()
+        {
+            if (!_context.Students.Any())
+            {
+                _context.Students.Add(new Student { StudentCode = "AB123" });
+                _context.Students.Add(new Student { StudentCode = "CD456" });
+                _context.Students.Add(new Student { StudentCode = "EF789" });
+                _context.Students.Add(new Student { StudentCode = "GH012" });
+                _context.Students.Add(new Student { StudentCode = "IJ345" });
+                _context.Students.Add(new Student { StudentCode = "KL678" });
+                _context.Students.Add(new Student { StudentCode = "MN901" });
+                _context.Students.Add(new Student { StudentCode = "OP234" });
+                _context.Students.Add(new Student { StudentCode = "QR567" });
+                _context.Students.Add(new Student { StudentCode = "ST890" });
+                _context.Students.Add(new Student { StudentCode = "UV123" });
+                _context.Students.Add(new Student { StudentCode = "WX456" });
+                _context.Students.Add(new Student { StudentCode = "YZ789" });
+                _context.Students.Add(new Student { StudentCode = "12AB3" });
+                _context.Students.Add(new Student { StudentCode = "34CD6" });
+                _context.Students.Add(new Student { StudentCode = "56EF7" });
+                _context.Students.Add(new Student { StudentCode = "78GH0" });
+                _context.Students.Add(new Student { StudentCode = "91IJ3" });
+                _context.Students.Add(new Student { StudentCode = "45KL6" });
+                _context.Students.Add(new Student { StudentCode = "78MN9" });
+                _context.Students.Add(new Student { StudentCode = "01OP2" });
+                _context.Students.Add(new Student { StudentCode = "34QR5" });
+                _context.Students.Add(new Student { StudentCode = "67ST8" });
+                _context.Students.Add(new Student { StudentCode = "90UV1" });
+                _context.Students.Add(new Student { StudentCode = "23WX4" });
+                _context.Students.Add(new Student { StudentCode = "56YZ7" });
+                _context.Students.Add(new Student { StudentCode = "89AB0" });
+                _context.Students.Add(new Student { StudentCode = "12CD3" });
+                _context.Students.Add(new Student { StudentCode = "45EF6" });
+                _context.Students.Add(new Student { StudentCode = "78GH9" });
+                _context.Students.Add(new Student { StudentCode = "01IJ2" });
+                _context.Students.Add(new Student { StudentCode = "34KL5" });
+                _context.Students.Add(new Student { StudentCode = "67MN8" });
+                _context.Students.Add(new Student { StudentCode = "90OP1" });
+                _context.Students.Add(new Student { StudentCode = "23QR4" });
+                _context.Students.Add(new Student { StudentCode = "56ST7" });
+                _context.Students.Add(new Student { StudentCode = "89UV0" });
+                _context.Students.Add(new Student { StudentCode = "12WX3" });
+                _context.Students.Add(new Student { StudentCode = "45YZ6" });
+                _context.Students.Add(new Student { StudentCode = "78AB9" });
+                _context.Students.Add(new Student { StudentCode = "01CD2" });
+                _context.Students.Add(new Student { StudentCode = "34EF5" });
+                _context.Students.Add(new Student { StudentCode = "67GH8" });
+                _context.Students.Add(new Student { StudentCode = "90IJ1" });
+                _context.Students.Add(new Student { StudentCode = "23KL4" });
+                _context.Students.Add(new Student { StudentCode = "56MN7" });
+                _context.Students.Add(new Student { StudentCode = "89OP0" });
+                
+            }
+
+
+        }
+
+
         //b.Property<string>("AutorLibro")
         //b.Property<int>("CantidadLibros")     
         //b.Property<string>("Genero")      
