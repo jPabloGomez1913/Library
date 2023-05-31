@@ -53,7 +53,7 @@ namespace LibraryProyect.Controllers
             try
             {
                 book.id = Guid.NewGuid();
-                //ticket.CreatedDate = DateTime.Now;
+                
                 _context.Books.Add(book);
                 await _context.SaveChangesAsync(); // Aquí es donde se hace el Insert Into...
             }

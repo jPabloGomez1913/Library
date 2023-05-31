@@ -20,6 +20,9 @@ namespace LibraryProyect.DAL.Entities
         [Required(ErrorMessage = "El campo {0} es obligatorio")]
         public string Genero { get; set; }
 
+        [Required(ErrorMessage = "El campo {0} es obligatorio")]
+        public int CantidadLibros { get; set; }
+
 
         public List<Loan>? Loans { get; set; }
         
