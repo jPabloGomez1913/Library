@@ -27,7 +27,12 @@ namespace LibraryProyect.DAL
         {
             if (!_context.Books.Any())
             {
-                _context.Books.Add(new Entities.Book { AutorLibro = "", CantidadLibros = 0, Genero = "", NombreLibro = "" });
+                // _context.Books.Add(new Book { AutorLibro = "", CantidadLibros = 0, Genero = "", NombreLibro = "" });
+                _context.Books.Add(new Book { AutorLibro = "Oscar Wilde", CantidadLibros = 2, Genero = "Drama", NombreLibro = "El retrato de Dorian Gray" });
+                _context.Books.Add(new Book { AutorLibro = "Oscar Wilde", CantidadLibros = 1, Genero = "Comedia", NombreLibro = "El hombre que contaba historias" });
+                _context.Books.Add(new Book { AutorLibro = "Oscar Wilde", CantidadLibros = 3, Genero = "Drama", NombreLibro = "El princi" });
+                _context.Books.Add(new Book { AutorLibro = "Jorge Luis Borges", CantidadLibros = 2, Genero = "Ficción", NombreLibro = "Ficciones" });
+                _context.Books.Add(new Book { AutorLibro = "Franz Kafka", CantidadLibros = 2, Genero = "Ficcion", NombreLibro = "La metamorfosis" });
                 _context.Books.Add(new Book { AutorLibro = "Antoine de Saint-Exupéry", CantidadLibros = 5, Genero = "Infantil", NombreLibro = "El principito" });
                 _context.Books.Add(new Book { AutorLibro = "Antoine de Saint-Exupéry", CantidadLibros = 3, Genero = "Biografia", NombreLibro = "Tierra de hombres" });
                 _context.Books.Add(new Book { AutorLibro = "Antoine de Saint-Exupéry", CantidadLibros = 4, Genero = "Ficcion", NombreLibro = "vuelo nocturno" });
@@ -45,9 +50,16 @@ namespace LibraryProyect.DAL
                 _context.Books.Add(new Book { AutorLibro = "William Shakespeare", CantidadLibros = 3, Genero = "Teatro", NombreLibro = "Romeo y Julieta" });
                 _context.Books.Add(new Book { AutorLibro = "William Shakespeare", CantidadLibros = 2, Genero = "Teatro", NombreLibro = "Hamlet" });
                 _context.Books.Add(new Book { AutorLibro = "William Shakespeare", CantidadLibros = 1, Genero = "Teatro", NombreLibro = "El sueño de una noche de verano" });
-
-
-            }
+                _context.Books.Add(new Book { AutorLibro = "J.R.R. Tolkien", CantidadLibros = 3, Genero = "Fantasía épica", NombreLibro = "El Señor de los Anillos" });
+                _context.Books.Add(new Book { AutorLibro = "Virginia Woolf", CantidadLibros = 2, Genero = "Feminismo", NombreLibro = "La señora Dalloway" });
+                _context.Books.Add(new Book { AutorLibro = "Julio Verne", CantidadLibros = 3, Genero = "Ciencia ficción", NombreLibro = "Veinte mil leguas de viaje submarino" });
+                _context.Books.Add(new Book { AutorLibro = "Emily Brontë", CantidadLibros = 2, Genero = "Romance gótico", NombreLibro = "Cumbres borrascosas" });
+                _context.Books.Add(new Book { AutorLibro = "Albert Camus", CantidadLibros = 2, Genero = "Filosofía", NombreLibro = "La peste" });
+                _context.Books.Add(new Book { AutorLibro = "Leo Tolstoy", CantidadLibros = 4, Genero = "Novela histórica", NombreLibro = "Guerra y paz" });
+                _context.Books.Add(new Book { AutorLibro = "Miguel de Cervantes", CantidadLibros = 3, Genero = "Novela de caballerías", NombreLibro = "Don Quijote de la Mancha" });
+                _context.Books.Add(new Book { AutorLibro = "Harper Lee", CantidadLibros = 2, Genero = "Novela clásica", NombreLibro = "Matar a un ruiseñor" });
+                
+        }
         }
 
     }
